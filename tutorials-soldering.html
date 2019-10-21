@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soldering Tutorial</title>
+    <link rel="stylesheet" href="css/pure.css" integrity="sha384-" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/side-menu.css">
+        <!--<![endif]-->
+</head>
+<body>
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#">Menu</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Soldering</a></li>
+                <li class="pure-menu-item"><a href="tutorials-antweight.html" class="pure-menu-link">Antweight</a></li>
+                <li class="pure-menu-item"><a href="tutorials-microbit.html" class="pure-menu-link">micro:bit</a></li>
+                <li class="pure-menu-item pure-menu-selected menu-item-divided"><a href="tutorials.html" class="pure-menu-link">Tutorials</a></li>
+                <li class="pure-menu-item"><a href="robots.html" class="pure-menu-link">Robots</a></li>
+                <li class="pure-menu-item pure-menu-selected menu-item-divided"><a href="index.html" class="pure-menu-link">Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+            <h1>Soldering Workshop</h1>
+            <h2>Solder a flashing LED board!</h2>
+        </div>
+
+        <div class="content">
+          <div id="iron-maintenance">
+            <h2 class="content-subhead bg-yellow">Looking after your soldering iron</h2>
+            <p>Without a clean soldering iron, you will always struggle to make a good joint.</p>
+            <p>The tip of your iron, when hot, should be bright silver. If it is dull and brown, follow these steps to <em>clean</em> and <em>tin</em> it.</p>
+            <ol>
+              <li>Heat up your iron.</li>
+              <li>Clean any deposits off the tip using brass wool or a wet sponge.</li>
+              <li>Melt some solder onto the tip, then it clean off using your brass wool or sponge.</li>
+              <li>The flux in the centre of your solder should <em>clean</em> the tip, and the solder itself should <em>tin</em> it.</li>
+              <li>Repeat this process a couple of times if necessary, to get a bright tip.</li>
+              <li>If this is not working, you can buy <em>tip tinner or cleaner</em>.
+                This is a mixture of flux and solder, especially designed for this purpose.</li>
+            </ol>
+            <img class="pure-img-responsive" src=".\images\soldering\cleaning-supplies.jpg" alt="iron cleaning supplies">
+            <p>When you are finished, your iron's tip should be bright silver.</p>
+            <img class="pure-img-responsive" src=".\images\soldering\cleaning-iron.jpg" alt="clean soldering tip">
+            <p>When you have finished soldering, repeat steps 2 and 3 before turning off your iron.
+              This will keep the iron clean, making it easier to use in the future.</p>
+          </div>
+
+          <div id="joint-tips">
+            <h2 class="content-subhead bg-blue">Tips for making a good joint</h2>
+            <p>Here a couple of guides to making a great solder joint:</p>
+            <ul>
+              <li><a href="https://www.kitronik.co.uk/blog/how-to-solder-in-ten-easy-steps/" target="_blank">
+              Kitronik's 'How to Solder'</a>, including clear close-up pictures.</li>
+              <li><a href="https://mightyohm.com/soldercomic" target="_blank">'Soldering is Easy!' comic</a>
+                . There is also a shorter one-page version.</li>
+            </ul>
+          </div>
+
+          <div id="components">
+
+            <h2 class="content-subhead bg-orange">Deciphering a soldering kit</h2>
+            <p>The workshop uses a LED soldering kit bought from
+              <a href="https://www.aliexpress.com/item/32842624201.html" target="_blank">Aliexpress</a>.</p>
+            <p>If you are not sure how to place all of your components correctly onto your board,
+              this section will help you to identify all of the parts -
+              both for this board and for future projects.</p>
+            <a href="#necessary">To skip straight to the final instructions, click here.</a>
+            <p>The first step is matching all of your components to their space on the board.
+              Lay out all of the components in front of you.</p>
+            <img class="pure-img-responsive" src=".\images\soldering\components-all.jpg" alt="board and all components">
+            <p>Even if you don't know what the components are,
+              you can get a a good idea where most of the parts go
+              by looking at the shape and size of them, as well as the number of parts.</p>
+            <p>For example:</p>
+
+            <h3>Light emitting diodes (LEDs)</h3>
+            <ul>
+              <li>There is a circle of ten component spaces around the edge of the board,
+                all labelled <strong>L</strong> plus a number.</li>
+              <li>You have at least ten LEDs in your kit (the red bulbs).
+                Logically, these components should match, as there is nothing else suitable in your kit.</li>
+              <li>LEDs have <strong>polarity</strong> - they will only work in one direction.</li>
+              <li>Look carefully at one of the LEDs, the top is not a complete circle -
+                one edge is flat. This edge matches up with the flat side of the drawings on the board.</li>
+              <li>On other boards, LEDs could be labelled with a <strong>D</strong> for <em>diode</em>,
+                or the electrical symbol for an LED.</li>
+            </ul>
+
+            <h3>Button switch</h3>
+            <ul>
+              <li>You have a button switch, with four leads - there is only one place on the board this can go.</li>
+              <li>Its orientation does not matter - it cannot fit in the board in an incorrect way.</li>
+              <li>Its space is labelled <strong>S</strong> for switch.</li>
+            </ul>
+
+            <h3>Chips</h3>
+            <ul>
+              <li>You have two chips - a large one and a small one. They can both only fit on one location.</li>
+              <li>These <strong>must</strong> be placed in the correct orientation.</li>
+              <li>Look carefully at one of the chips - you should see a small dimple on the top.</li>
+              <img class="pure-img-responsive" src=".\images\soldering\components-chip.jpg" alt="close-up of chip">
+              <li>Match this dimple with the drawing on the board.</li>
+            </ul>
+
+            <h3>Capacitors</h3>
+            <ul>
+              <li>You have three capacitors in your kit - two large blue ones, and one small orange one.
+              There are three spaces labelled <strong>C</strong> on your board, but they all look slightly different.</li>
+              <li>The small orange capacitor has the number <strong>103</strong> printed on it -
+                find its space on the board. This capacitor is not <strong>polarised</strong>.</li>
+              <li>There are two more spaces for capacitors on the board,
+                one of them has a label <strong>47uF</strong> -
+                look carefully at your two capacitors to find the one labelled 47uF.</li>
+              <li>These two capacitors <strong>are</strong> polarised.
+                 They have a stripe down one side to show the negative lead.</li>
+              <img class="pure-img-responsive" src=".\images\soldering\components-cap-polarity.jpg" alt="close-up of capacitor">
+              <li>This stripe matches the shaded side of the drawing on the board.</li>
+              <li>Other boards may use the electrical symbol for a capacitor instead of a shaded drawing.</li>
+            </ul>
+
+            <h3>Transistor</h3>
+            <ul>
+              <li>You have one component that has three legs. There is only one place for it to go!</li>
+              <li>It matters which way around this component is placed -
+                match its shape to the drawing on the board.</li>
+            </ul>
+
+            <h3>Resistors</h3>
+            <ul>
+              <li>You have four resistors, and four spaces on the board labelled <strong>R</strong>.</li>
+              <li>Two of the spaces are also labelled <strong>470K</strong>,
+                one labelled <strong>10K</strong> and one <strong>100</strong>.</li>
+              <li>Look carefully at your four resistors - paying attention to the coloured bands.
+              Two of them are identical, so must match with the two spaces labelled <strong>470K</strong>.</li>
+              <li>To work out the difference between your final two resistors,
+                you need to use a resistor colour chart.
+                <a href="https://www.digikey.co.uk/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band" target="_blank">
+                  Click here for one example</a>.</li>
+              </ul>
+
+              <h3>Battery pack</h3>
+              <ul>
+                <li>Find the holes on your board labelled <strong>+ -</strong> and <strong>DC 5V</strong>.</li>
+                <li>The black wire on your battery pack goes to the negative hole,
+                  the red wire to the positive hole.</li>
+                <li>You have four holes on the board, two larger than the other.</li>
+                <li>The two smaller holes are for soldering your wires to.
+                  The two larger holes are for pushing the wires through first,
+                  to help with stress relief so that the connection does not get pulled apart.</li>
+                <img class="pure-img-responsive" src=".\images\soldering\board-batteries.jpg" alt="close-up of capacitor">
+              </ul>
+
+            <h3 id="necessary">Key points</h3>
+            <ul>
+              <li>If there is a drawing on the board indicating a shape - match it to your component,
+                it will almost certainly not work in any other orientation.</li>
+              <li>If there is no indication of which way around to place a component,
+                it probably does not matter which way around it goes.</li>
+              <li>If there is a number on the board, you will almost certainly have a component to match it.</li>
+              <li>If you work out most of the components this way, you have less to google!</li>
+            </ul>
+          </div>
+
+          <div id="instructions">
+            <h2 class="content-subhead bg-yellow">Soldering the PCB</h2>
+            <p>A good habit to get into is starting from the shortest component,
+              in this case the resistors. If you start with a tall component,
+              you will be balancing the board awkwardly for the rest of the time!</p>
+            <h3>Quirks of this board...</h3>
+            <p>On this board, the drawing to show the polarity of <strong>L6</strong>
+              is covered by other things.</p>
+            <p>To work out which way around it should go, turn the board over to look at the
+              <strong>copper traces</strong> - these are the paler green lines.</p>
+            <p><strong>If two holes are in the same patch of pale green, they are connected together.</strong></p>
+            <p>The flat side of the LED is the negative side, and all of the negative sides
+              will connect to <strong>ground</strong>,
+              which means they all connect to the same place, therefore each other.</p>
+            <p>Look for the hole that the negative side of <strong>L5</strong> or <strong>L7</strong>
+              will be soldered to, and see which pale green trace it is in.
+              The <strong>L6</strong> hole in the same trace, will be negative side of the LED.</p>
+            <img class="pure-img-responsive" src=".\images\soldering\board-traces.jpg" alt="close-up of traces">
+          </div>
+
+          <div id="next-steps">
+            <h2 class="content-subhead bg-blue">Next steps</h2>
+            <p>Cheap soldering kits are easy to get hold of from e.g. Aliexpress or eBay.</p>
+            <p>Higher quality kits can be more useful once you've had some practice -
+              you can make badges to wear, or something functional such as a battery tester.</p>
+            <p><a href="https://boldport.com/" target="_blank">Boldport</a> kits are both beautiful and (sometimes) functional,
+              and come with great documentation!</p>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="js/ui.js"></script>
+
+</body>
+</html>
