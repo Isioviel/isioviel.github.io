@@ -29,12 +29,12 @@
             <a class="pure-menu-heading" href="#">Menu</a>
 
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="tutorials-soldering.html" class="pure-menu-link">Soldering</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Antweight</a></li>
-                <li class="pure-menu-item"><a href="tutorials-microbit.html" class="pure-menu-link">micro:bit</a></li>
-                <li class="pure-menu-item pure-menu-selected menu-item-divided"><a href="tutorials.html" class="pure-menu-link">Tutorials</a></li>
-                <li class="pure-menu-item"><a href="robots.html" class="pure-menu-link">Robots</a></li>
-                <li class="pure-menu-item pure-menu-selected menu-item-divided"><a href="index.html" class="pure-menu-link">Home</a></li>
+              <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Tutorials</a></li>
+              <li class="pure-menu-item"><a href="tutorials-antweight.html" class="pure-menu-link">Antweight</a></li>
+              <li class="pure-menu-item"><a href="tutorials-microbit.html" class="pure-menu-link">micro:bit</a></li>
+              <li class="pure-menu-item"><a href="tutorials-soldering.html" class="pure-menu-link">Soldering</a></li>
+              <li class="pure-menu-item  menu-item-divided"><a href="robots.html" class="pure-menu-link">Robots</a></li>
+              <li class="pure-menu-item pure-menu-selected menu-item-divided"><a href="index.html" class="pure-menu-link">Home</a></li>
             </ul>
         </div>
     </div>
@@ -44,12 +44,290 @@
             <h1>Wiring your First Antweight</h1>
         </div>
 
-        <div class="content">
-            <h2 class="content-subhead bg-yellow">In progress...</h2>
-            <p>
-              Coming soon!
-            </p>
+        <div id="intro" class="content">
+          <p>An Antweight robot is a small fighting robot, like those seen on Robot Wars and Battlebots, but much smaller!</p>
+          <p>It is one of many weight classes, and the classes may differ based on which country you are in.</p>
+          <p>In the UK, an Antweight:</p>
+          <ul>
+            <li>weighs no more than 150g</li>
+            <li>fits inside a 4" cube</li>
+          </ul>
+          <p><em>In the USA, robots this small are known as Fairyweights, and an Antweight is larger.</em></p>
+          <p>There is a set of standard rules that most events conform to,
+            so to make sure that you are able to compete with your new robot,
+          <a href="http://www.robotwars101.org/ants/rules.htm" target="_blank">have a read through the current ruleset</a>.</p>
+          <p>This guide will help you to choose the components for,
+            and wire up, the drive system for your first Antweight robot.
+            It does not cover weapons or designing your chassis and armour.</p>
 
+          <h2 class="content-subhead bg-blue">Tools and Components</h2>
+          <h3>Tools</h3>
+          <ul>
+            <li>Soldering iron + stand & sponge</li>
+            <li>Solder</li>
+            <li>Protective surface</li>
+            <li>Wire cutters & strippers</li>
+          </ul>
+
+          <h3>Components</h3>
+          <ul>
+            <li><a href="#controller">Radio controller</a></li>
+            <li><a href="#controller">Radio receiver</a></li>
+            <li><a href="#esc">Electronic speed controller (ESC)</a></li>
+            <li><a href="#battery">Battery</a></li>
+            <li><a href="#motors">Two motors</a></li>
+          </ul>
+
+          <a href="#wiring">Click here to skip to the wiring instructions.</a>
+        </div>
+
+        <div id="controller" class="content">
+            <h2 class="content-subhead bg-blue">Radio controller & receiver</h2>
+            <p>Modern radio controllers use a frequency of 2.4GHz.
+              You pair, or bind, a receiver to your controller, and the chances of interference from other
+              systems is low.</p>
+            <p>You must choose a receiver that uses the same <em>protocol</em> as your controller.
+              For example, Spectrum controllers use DSM2 or DSMX and
+              a FrSky controller needs a FrSky compatible receiver.</p>
+            <p>You should also choose a receiver that supports PWM, or is designed to work with servos.
+              This means that your ESC (see next section) will be able to understand the information it is sending.</p>
+            <p>This tutorial uses a <strong>Spectrum DX5e controller</strong>,
+              with an <strong>OrangeRx R410X</strong> receiver,
+              however the techniques discussed will be transferable to other systems.</p>
+            <img class="pure-img-responsive" src="https://www.instructables.com/files/deriv/FT1/DCZ3/K24YHWNP/FT1DCZ3K24YHWNP.LARGE.jpg" alt="various receivers">
+          </div>
+
+          <div id="esc" class="content">
+              <h2 class="content-subhead bg-blue">Electronic speed controller (ESC)</h2>
+              <p>An ESC is what translates the information sent from your controller into
+                information the motors can understand.</p>
+              <p>They come pre-programmed, and the channels may be <em>mixed</em> or unmixed.</p>
+              <ul>
+                <li>Mixed: when you push the stick on your controller
+                it can control two motors at once.</li>
+                <li>Unmixed: each motor will use a different stick to control it by default,
+                and you can set the mixing on your controller.</li>
+              </ul>
+              <p>Which you choose is down to preference, and which radio system you have.</p>
+              <p>I use unmixed ESCs, because I use a FrSky Taranis X9D+ radio controller,
+                which gives me detailed control over the mixing.
+                The Spectrum DX5e in this tutorial has limited mixing options,
+                so using an ESC with mixing would probably be preferable.</p>
+              <p>Choose a 2-channel bi-directional ESC.</p>
+              <ul>
+                <li>2-channel: it can control two motors. Otherwise, you will need two ESCs, one for each motor.</li>
+                <li>Bi-directional: it can control each motor in both the forward and backward direction.
+                  ESCs made for planes often only work in a single direction, which is not very useful for antweights!</li>
+              </ul>
+              <p>This tutorial uses a <strong><a href="https://www.banggood.com/2S6A-Micro-Dual-Bi-Directional-Speed-Controller-for-Tank-Crawler-and-Boat-without-Brake-p-1032413.html" target="_blank">
+                DasMikro 2S6A without mixing</a></strong>,
+                however the techniques discussed will be transferable.</p>
+                <ul>
+                  <li>I use DasMikros because they are cheap, not because they are good!
+                There are many better options if you can get hold of them,
+                such as the <a href="https://nutsandbots.co.uk/product/nanotwo-lt-dual-esc/" target="_blank">NanoTwo</a>
+                or the <a href="https://www.arc-robotics.org.uk/product/awesc-v4-2-channel-high-voltage-antweight-speed-controller/" target="_blank">
+                  AWESC</a>.</li>
+                  <li>In a pinch, you can use circuit boards taken out of standard servos.
+                These need modification and are single channel, so save this for emergencies!</li>
+              </ul>
+              <img class="pure-img-responsive" src="https://www.instructables.com/files/deriv/FU5/A5FU/K24YHWNO/FU5A5FUK24YHWNO.LARGE.jpg" alt="various ESCs">
+          </div>
+
+          <div id="battery" class="content">
+              <h2 class="content-subhead bg-blue">Batteries</h2>
+              <p>The batteries used in most modern antweights are Lithium Polymer (LiPo) batteries.</p>
+              <p>They are very light for the amount of power you can get out of them, however they have some downsides.</p>
+              <p>LiPos are very volatile, and it is important to take care of them,
+                and to charge them using an appropriate charger.</p>
+              <p>A <strong>2S</strong> (two cell) battery will give you around 7.2V,
+                which is plenty for an antweight's drive system.</p>
+              <p>Do check that your ESC will cope with this voltage.</p>
+              <p>This tutorial uses a <strong>Turnigy nano-tech 180mAh 2S 40C</strong> battery,
+                which provides plenty of current, and is a good size.</p>
+              <p>These are no longer in production. You can get higher discharge batteries, or smaller sized ones,
+                but I have been happy with the performance of these batteries for my own robots so they are good
+                starting point.</p>
+              <p>To read more about LiPo safety, and understand what all the numbers mean,
+                 I recommend <a href="https://rogershobbycenter.com/lipoguide" target="_blank">this guide.</a></p>
+            </div>
+
+            <div id="motors" class="content">
+                <h2 class="content-subhead bg-blue">Motors</h2>
+                <p>N20 motors are small, light and reliable.</p>
+                <p>You can buy them from reputable suppliers, or cheaply from eBay or AliExpress.</p>
+                <p>The more reputable the supplier, the more likely that the motors will conform to the
+                  given specification, however I have never had any problems with cheap motors.</p>
+                <p>To match your 2S LiPo battery, get 6V motors. If you buy e.g. 12V motors,
+                  they will turn very slowly; 3V motors might burn out at this voltage.</p>
+                <p>I use motors geared to an RPM of 300-500, which gives a reasonable but controllable speed.</p>
+                <p>The speed of your robot is determined by more than just the RPM of the motors however, you must also
+                  take into account the size of your wheels, and the voltage of your battery.</p>
+            </div>
+
+            <div id="wiring" class="content">
+                <h2 class="content-subhead bg-orange">Wiring Instructions</h2>
+                <p>Now you have chosen all of your components, you can wire them together.</p>
+                <img class="pure-img-responsive" src="https://www.instructables.com/files/deriv/F8H/WK0X/K24YHWOD/F8HWK0XK24YHWOD.LARGE.jpg" alt="components">
+            </div>
+
+            <div id="binding" class="content">
+                <h2 class="content-subhead bg-orange">Binding your receiver to your controller</h2>
+                <p>If your controller allows you to save multiple <em>models</em>, create a new one.
+                  Each model can bind to a different receiver,
+                  allowing you to control multiple robots from the same controller.</p>
+                <p>The DX5e does not have this option, so I am skipping this step.</p>
+                <p>Different receivers have different binding instructions, so the first step is to check the manual!</p>
+                <p>Search online for your receiver. The manual for the R410X is <a href="https://cdn-global-hk.hobbyking.com/media/file/672750645X1606554X14.pdf" target="_blank">
+                  here</a>.<p>
+                <p>Find the binding instructions in the manual, and follow them.</p>
+                <p>For the R410X, the first two instructions in the <strong><u>Binding Procedure</u></strong> section
+                   say to:</p>
+                <ol>
+                  <li>install a bind plug</li>
+                  <li>connect power.</li>
+                </ol>
+                <p>On the receiver, is a label <strong>BATT/BIND</strong>.
+                  A bind plug should have come with your receiver. Push this into the labelled column of pins.</p>
+                <p>Further down in the manual, just above the <strong><u>Channel Connector Description</u></strong>
+                  is a picture highlighting which are the signal, power and ground pins on the receiver.</p>
+                <p>It is important to plug the battery in the correct way around,
+                  so the positive lead connects to VCC (the middle pin), and the negative lead connects to GND.</p>
+                <p>It does not matter which of the positive and ground pins you connect the battery to, as they are all connected together.</p>
+                <img class="pure-img-responsive" src="https://www.instructables.com/files/deriv/FPE/I73E/K24YHWOE/FPEI73EK24YHWOE.LARGE.jpg" alt="bind plug and battery">
+                <p>The LED on the receiver should be flashing, which means it is in bind mode.</p>
+                <p>The next step in the instructions tell us to follow our transmitter's procedure for binding,
+                  so we need to find another manual!</p>
+                <p>The Quick Start Guide for the Spectrum DX5e is <a href="https://www.spektrumrc.com/ProdInfo/Files/DX5eQuickStartGuide.pdf" target="_blank">
+                  here</a>.</p>
+                <p>Under the <strong><u>Bind Receiver</u></strong> instructions, step <strong>C</strong>
+                  tells us to move the sticks to the desired failsafe position.</p>
+                <p>This means what you want your robot to do if the signal is lost - you want it to stop moving and turn
+                  off any weapons.</p>
+                <p>I am going to be using the <strong>right stick</strong> to drive the robot in these instructions,
+                  so make sure that it is settled in the middle and don't worry too much about the others.
+                  You can re-bind the receiver later if you want to reset the failsafe.</p>
+                <p>The <em>trainer switch</em> mentioned in step <strong>D</strong> is on the top left of the controller.
+                  Hold it in the forward position while you turn on the controller.</p>
+                <p>The receiver's LED should stop flashing, which means it is connected. If this doesn't happen,
+                  repeat the process, and try any troubleshooting ideas given in the manual.</p>
+            </div>
+
+            <div id="wiring-power" class="content">
+                <h2 class="content-subhead bg-orange">Powering your ESC & receiver</h2>
+                <p>Find the wiring instructions for your ESC.
+                  The Das Mikro instructions are <a href="https://www.banggood.com/2S6A-Micro-Dual-Bi-Directional-Speed-Controller-for-Tank-Crawler-and-Boat-without-Brake-p-1032413.html"
+                  target="_blank">here</a>.</p>
+                <p>Scroll down to the <strong><u>Wire Connection</u></strong> diagram.</p>
+                <ul>
+                  <li>GND & VCC = battery power, full voltage</li>
+                  <li>GND & VCC(SERVO,5V/1A) = battery power, regulated down to 5V</li>
+                  <li>Signal 1 & 2 = connections to the receiver</li>
+                  <li>Motor A & B = connections to the motors</li>
+                </ul>
+                <p>I am going to detail two ways of adding power to the system,
+                  and explain why you might choose each option.</p>
+                <h3>Option A</h3>
+                <p>Plugging the battery into the receiver, and powering the ESC (and therefore the motors) through that.</p>
+                <img class="pure-img-responsive" src=".\images\ant-tut\wiring1.png" alt="wiring option 1 - battery into receiver">
+                <p>This works if all of your components need the same voltage.</p>
+                <ul>
+                  <li>2S LiPo = 6-8.4V</li>
+                  <li>Receiver = 3.7-9.6V </li>
+                  <li>ESC = 4.2V-9.6V</li>
+                </ul>
+                <p>Nothing will be damaged by the voltage.</p>
+                <h3>Option B</h3>
+                <p>Plugging the battery into the ESC, and powering the receiver through that.</p>
+                <img class="pure-img-responsive" src=".\images\ant-tut\wiring2.png" alt="wiring option 2 - battery into ESC">
+                <p>This ESC has the ability to regulate the voltage - to provide a 5V supply to other components.</p>
+                <p>This is sometimes known as a battery elimination circuit (BEC).</p>
+                <p>This is necessary if your receiver, or other components being powered from the receiver, need less voltage.</p>
+                <ul>
+                  <li>2S LiPo = 6-8.4V</li>
+                  <li>Receiver = 5V</li>
+                  <li>ESC = 4.2-9.6V</li>
+                </ul>
+                <p>In this case, plugging the battery into the receiver would damage it.</p>
+                <p>You can get power to your components in a number of ways, these are only two examples (involving as little wiring as possible!)</p>
+                <p>The important thing is to <strong>check the requirements and limitations of your components</strong>, to make sure everything is getting the power it needs.</p>
+            </div>
+
+            <div id="wiring-signal" class="content">
+                <h2 class="content-subhead bg-orange">Finishing the circuit</h2>
+                <p>I am going to use the <strong>Option A</strong> wiring for this tutorial.</p>
+                <p>As well as power, you need signal wires so that the receiver can communicate with the ESC, and the ESC can communicate with the motors.</p>
+                <p>The R410X has the following labels:</p>
+                <ul>
+                  <li>RUDD</li>
+                  <li>ELEV</li>
+                  <li>AILE</li>
+                  <li>THRO</li>
+                  <li>BATT/BIND</li>
+                </ul>
+                <p>These terms refer to flying a model plane, and let you know which <strong>channel</strong> each signal is connected to.</p>
+                <p>Some controllers let you choose how each channel is controlled (and some receivers are labelled <em>channel 1</em> etc.),
+                  however the DX5e does not, so we want to connect the ESC to the channels we need.</p>
+                <p>This controller is a <em>Mode 2</em>, which means that the <em>rudder</em> and <em>throttle</em> are controlled by the <strong>left stick</strong>,
+                  <em>aileron</em> and <em>elevator</em> by the <strong>right</strong>.</p>
+                <p>I want to control both motors from the <strong>right stick</strong>, which means connecting the two signal wires on the ESC to <strong>ELEV</strong> and <strong>AILE</strong>.</p>
+                <img class="pure-img-responsive" src=".\images\ant-tut\wiring1.png" alt="wiring option 1 - battery into receiver">
+                <p>Finally, the motors themselves need to be connected to the ESC.</p>
+                <p>Connect one motor to the <strong>Motor A</strong> connections and the other motor to the <strong>Motor B</strong> connections.</p>
+                <p>If you are using the Das Mikro ESC, you will need to solder wires to the board directly.
+                  Other ESCs come with wires attached, so you can plug straight into your receiver.</p>
+                <p>Connect all of your wires, and secure your motors (e.g. taping them to a piece of strong cardboard) before moving on to the next section.</p>
+                <div class="pure-g">
+                  <div class="pure-u-1-2">
+                      <img class="pure-img-responsive" src="https://www.instructables.com/files/deriv/FDF/JSH0/K24YHWPU/FDFJSH0K24YHWPU.LARGE.jpg" alt="wiring ready to solder">
+                  </div>
+                  <div class="pure-u-1-2">
+                      <img class="pure-img-responsive" src=".\images\ant-tut\wiring4.JPG" alt="wiring soldered">
+                  </div>
+                </div>
+            </div>
+
+            <div id="controller-settings" class="content">
+                <h2 class="content-subhead bg-orange">Adjusting channel settings</h2>
+                <p>It is unlikely that your motors will move exactly as you want them to when they are first connected.
+                  You can adjust settings on your controller to get the desired behaviour.</p>
+                <p>Each controller will be different, so check the manual for yours.</p>
+                <img class="pure-img-responsive" src="https://www.instructables.com/files/deriv/FEO/W525/K24YHWPX/FEOW525K24YHWPX.LARGE.jpg" alt="controller options">
+                <h3>Trim</h3>
+                <p>Your motors might be moving, even though you are not pushing the sticks.</p>
+                <p>You can use the trim buttons to adjust the centre - telling your motors what to do when the stick is centred.</p>
+                <p>The vertical button controls the <em>aileron</em>, and the horizontal the <em>elevator</em>.
+                  Check which motor you have connected to which channel, and adjust the trim until both motors are still.</p>
+                <h3>Mix</h3>
+                <p>One motor is connected to the <em>aileron</em> channel, and the other to the <em>elevator</em> channel.</p>
+                <p>This means that, if you are using an ESC without mixing, pushing up and down on the right stick will move one motor,
+                  pushing left and right will move the other.</p>
+                <p>This will lead to some weird driving, so you should <strong>mix the channels</strong>,
+                  meaning that pushing up and down on the right stick will move <strong>both</strong> motors instead.</p>
+                <p>On the DX5e, this is controlled with a toggle - just push it one way to turn on mixing, the other way to turn it off again.</p>
+                <h3>Reverse</h3>
+                <p>Which direction your motors turn in, depends on which way around they were wired.</p>
+                <p>You might find that when one motor moves forward, the other moves backward. Or that they both turn backward when you want to go forward.</p>
+                <p>On the DX5e, there is a toggle switch for each channel, to reverse the direction.</p>
+                <p>So, if the motor connected to the <em>aileron</em> channel turns backwards when you push up on the stick,
+                  flick the <strong>AIL</strong> toggle on the controller.</p>
+            </div>
+
+            <div id="next-steps" class="content">
+                <h2 class="content-subhead bg-yellow">Next Steps</h2>
+                <p>Once you have set up your drive system, you are well on your way to having a working antweight robot!</p>
+                <p>A few things to think about...</p>
+                <ul>
+                  <li>How are you going to build the body?</li>
+                  <li>How are you going to attach the electronics to it?</li>
+                  <li>Do you want to add a switch to make it easier to turn on or off?</li>
+                  <li>What will you use for wheels?</li>
+                </ul>
+                <p>The <a href="http://robotwars101.org/forum" target="_blank">RobotWars101</a> forum is a great source of help and inspiration -
+                  read build diaries, ask questions and hear about upcoming events.</p>
+                <p>Your first robot will not be perfect, but completing it is still a great achievement.</p>
+                <p>Bring it along to a competition to meet other roboteers and get ideas, inspiration and advice to make your second robot even better!</p>
+            </div>
         </div>
     </div>
 </div>
