@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Your Own - Components List</title>
+    <link rel="stylesheet" href="css/pure.css" integrity="sha384-" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="css/side-menu.css">
+        <!--<![endif]-->
+</head>
+<body>
+
+    <div id="main">
+        <div class="header">
+            <h1>Glow Your Own</h1>
+            <h2>What's in your kit?</h2>
+        </div>
+
+        <div id="intro" class="content">
+            <p>The information below will help you to identify the components in your kit - you might not have all of them, and your might not look <em>exactly</em> the same as these pictures.</p>
+            <p><strong>Look at the component you want to identify then click the link below that best describes it...</strong></p>
+            <ul>
+              <li><a href="#big-things">A large or long thing</a></li>
+              <li><a href="#two-legs">Two legs or pins</a></li>
+              <li><a href="#three-legs">Three legs or pins</a></li>
+              <li><a href="#four-legs">Four legs or pins</a></li>
+              <li><a href="#chips">More than four legs</a></li>
+            </ul>
+        </div>
+
+        <div id="big-things" class="content">
+            <h2 class="content-subhead bg-yellow">Big Components</h2>
+            <p>There are various large or long things in your kit!</p>
+            <ul>
+              <li><strong>Breadboard</strong> - used to build your Arduino circuits.</li>
+              <li><strong>Power supply module</strong> - used to power your Arduino without using your computer (not in the picture).</li>
+              <li><strong>Jumper cables</strong> - these cables have pointy ends, known as male or M, which can fit in the breadboard and non-pointy ends, known as female or F, which can connect to your Arduino.</li>
+              <li><strong>Pin headers</strong> - these can push into the breadboard so that you can use cables with an F end, or are often <em>soldered</em> to components.</li>
+            </ul>
+            <img src=".\images\big-things.jpg" alt="Breadboard, jumper cables, pin headers" width="1000px" height="auto">
+          </div>
+
+        <div id="two-legs" class="content">
+            <h2 class="content-subhead bg-blue">Two-legged Components</h2>
+            <p>Most things in your kit have two legs, so you will need to use some detective work to figure out which is which! Look at the shape, colour, and any numbers or identifying marks.</p>
+
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\LED.jpg" alt="LEDs">
+                </div>
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\resistors.jpg" alt="Resistors">
+                </div>
+            </div>
+            <p><strong>Light-emitting diodes, LEDs</strong>, come in lots of colours. They only work when connected the right way round.</p>
+            <p><strong>Resistors</strong> limit the current flowing through a circuit. You will have lots of different values - work out which is which by <a href="https://uk.farnell.com/resistor-colour-code-calculator" target=_blank>following a colour chart</a>!</p>
+
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\thermistor.jpg" alt="Thermistor">
+                </div>
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\photoresistor.jpg" alt="Photoresistor">
+                </div>
+            </div>
+            <p><strong>Thermistors</strong> are temperature-dependent resistors. You can use them to add temperature control into your program.</p>
+            <p><strong>Photodiodes</strong> are light-dependent resistors. You can use them to add light control into your program.</p>
+
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\buzzers.jpg" alt="Buzzers">
+                </div>
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\diodes.jpg" alt="Diode">
+                </div>
+            </div>
+            <p><strong>Buzzzers</strong> come in two varieties, <em>active</em> and <em>passive</em>. Active buzzers will make a sound as soon as you connect power to them, passive buzzers need a <em>signal</em> (they won't do anything unless you tell them to in your code).</p>
+            <p>Active buzzers have a positive and negative leg, passive buzzers will work in either direction.</p>
+            <p><strong>Diodes</strong> limit current flow to one direction only. LEDs are a kind of diode (which is why they only work in one direction!).</p>
+
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\ceramic-capacitors.jpg" alt="Ceramic capacitor">
+                </div>
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\electrolytic-capacitors.jpg" alt="Electrolytic capacitor">
+                </div>
+            </div>
+            <p><strong>Capacitors</strong> store electrical energy for later use. They can help keep your circuits running smoothly if you are drawing a lot of power!</p>
+            <p>There are two kinds of capacitor, <em>ceramic</em> and <em>electrolytic</em>. Electrolytic capacitors only work in one direction (they have a positive and negative leg), ceramic capacitors work either way round.</p>
+        </div>
+
+        <div id="three-legs" class="content">
+            <h2 class="content-subhead bg-orange">Three-legged Components</h2>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\potentiometer.jpg" alt="Potentiometer">
+                </div>
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\transistor.jpg" alt="Transistor">
+                </div>
+            </div>
+            <p><strong>Potentiometers</strong> are also called <em>variable resistors</em> - they can be used as a 'dial' to control your program.</p>
+            <p><strong>Transistors</strong> come in various kinds! They can be used as electrical switches or as amplifiers, depending on which ones you have.</p>
+            <p>In your kit, you have a <strong>PN2222</strong> transistor. An example of its use, to control a motor, can be found <a href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/overview" target=_blank>in this Adafruit lesson</a>.</p>
+        </div>
+
+        <div id="four-legs" class="content">
+            <h2 class="content-subhead bg-yellow">Four-legged Components</h2>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\button.jpg" alt="Button">
+                </div>
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\RGB-LED.jpg" alt="RGB LED">
+                </div>
+            </div>
+            <p><strong>Button switches</strong> ...</p>
+            <p><strong>RGB LEDs</strong> ...</p>
+        </div>
+
+        <div id="chips" class="content">
+            <h2 class="content-subhead bg-blue">Many-legged Components (Chips)</h2>
+            <p>To identify an electronic chip, you will need to look for a identifying code, usually printed on the top.</p>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\chips.jpg" alt="Chips">
+                </div>
+                <div class="pure-u-1-2">
+                    <img class="pure-img-responsive" src=".\images\soldering\components-chip.jpg" alt="Zoomed-in chip">
+                </div>
+            </div>
+            <p>You might have these chips in your kit...</p>
+            <ul>
+              <li><strong>74HC595, 16 legs</strong> - this is a 'shift register'. An example of its use, to control eight LEDs from one Arduino pin, can be found <a href="https://learn.adafruit.com/adafruit-arduino-lesson-4-eight-leds/overview" target=_blank>in this Adafruit lesson</a>.</li>
+              <li><strong>4N35, 6 legs</strong> - this is an 'optocoupler' and can be used to reduce electrical interference.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
